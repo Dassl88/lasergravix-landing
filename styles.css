@@ -244,9 +244,11 @@ button:focus-visible,
 
 .hero-chip-row {
     width: min(calc(100% - 32px), var(--max));
-    margin: 0 auto 12px;
+    margin: 10px auto 0;
     position: relative;
-    z-index: 1;
+    z-index: 41;
+    display: flex;
+    justify-content: center;
 }
 
 .hero-inner {
@@ -605,31 +607,41 @@ button:focus-visible,
     }
 }
 
-.slideshow-dots {
+.slideshow-progress {
+    width: min(100%, 520px);
     display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 14px;
+    align-items: center;
+    gap: 12px;
+    margin: 18px auto 0;
 }
 
-.slideshow-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--border);
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    transition: background 0.2s, box-shadow 0.2s;
+.slideshow-progress-count,
+.slideshow-progress-total {
+    min-width: 28px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.68);
+    text-align: center;
 }
 
-#showcase-1:checked ~ .slideshow-dots label[for="showcase-1"],
-#showcase-2:checked ~ .slideshow-dots label[for="showcase-2"],
-#showcase-3:checked ~ .slideshow-dots label[for="showcase-3"],
-#showcase-4:checked ~ .slideshow-dots label[for="showcase-4"],
-#showcase-5:checked ~ .slideshow-dots label[for="showcase-5"] {
-    background: var(--brand);
-    box-shadow: 0 0 6px var(--brand-glow);
+.slideshow-progress-bar {
+    flex: 1;
+    height: 6px;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.38);
+}
+
+.slideshow-progress-fill {
+    display: block;
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #ff7a2a, #ffb36f);
+    box-shadow: 0 0 16px rgba(255, 120, 40, 0.26);
+    transition: width 0.35s ease;
 }
 
 /* CTA-Band direkt unter der Slideshow */
@@ -1110,13 +1122,12 @@ button:focus-visible,
 /* Responsive Anpassungen */
 @media (min-width: 720px) {
     .hero-chip-row {
-        margin-bottom: 0;
-        padding-top: 18px;
+        margin-top: 14px;
     }
 
     .hero-inner {
         grid-template-columns: minmax(0, 1fr) minmax(360px, 460px);
-        padding-top: 18px;
+        padding-top: 32px;
     }
 
     .about-grid,
@@ -1234,10 +1245,7 @@ button:focus-visible,
 
     .hero-chip-row {
         width: min(calc(100% - 20px), var(--max));
-        margin: 0 auto 14px;
-        padding-top: 8px;
-        display: flex;
-        justify-content: center;
+        margin: 8px auto 0;
     }
 
     .hero-left {
@@ -1338,6 +1346,17 @@ button:focus-visible,
 
     .hero-inner {
         padding-top: 0;
+    }
+
+    .slideshow-progress {
+        gap: 10px;
+        margin-top: 16px;
+    }
+
+    .slideshow-progress-count,
+    .slideshow-progress-total {
+        min-width: 24px;
+        font-size: 11px;
     }
 
     .hero-actions .btn,

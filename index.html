@@ -35,6 +35,13 @@
         </div>
     </header>
 
+    <div class="container hero-chip-row">
+        <p class="hero-chip">
+            <span class="hero-chip-dot"></span>
+            Premium Pre-Launch
+        </p>
+    </div>
+
     <main>
         <section class="section">
             <div class="section-inner">
@@ -49,13 +56,6 @@
 
         <!-- Hero wie auf der echten Startseite, aber inhaltlich auf Pre-Launch angepasst -->
         <section class="hero" id="hero">
-            <div class="container hero-chip-row">
-                <p class="hero-chip">
-                    <span class="hero-chip-dot"></span>
-                    Premium Pre-Launch
-                </p>
-            </div>
-
             <div class="container hero-inner">
                 <div class="hero-left">
                     <h1 class="hero-headline">
@@ -139,7 +139,13 @@
                     </div>
                 </div>
             </div>
-            <div class="slideshow-dots" id="slideshowDots"></div>
+            <div class="slideshow-progress" id="slideshowProgress" aria-label="Fortschritt der Bildergalerie">
+                <span class="slideshow-progress-count" id="slideshowCurrent">01</span>
+                <div class="slideshow-progress-bar" aria-hidden="true">
+                    <span class="slideshow-progress-fill" id="slideshowProgressFill"></span>
+                </div>
+                <span class="slideshow-progress-total" id="slideshowTotal">11</span>
+            </div>
         </section>
 
         <!-- Band direkt wie auf der echten Startseite, nur mit Coming-Soon-Botschaft -->
@@ -420,8 +426,11 @@
     (function () {
         var slideshow = document.getElementById('gravurSlideshow');
         var track = document.getElementById('gravurTrack');
-        var dotsEl = document.getElementById('slideshowDots');
-        if (!slideshow || !track || !dotsEl) return;
+        var progressEl = document.getElementById('slideshowProgress');
+        var currentEl = document.getElementById('slideshowCurrent');
+        var totalEl = document.getElementById('slideshowTotal');
+        var progressFillEl = document.getElementById('slideshowProgressFill');
+        if (!slideshow || !track || !progressEl || !currentEl || !totalEl || !progressFillEl) return;
 
         var origItems = Array.prototype.slice.call(track.querySelectorAll('.gallery-item'));
         var COUNT = origItems.length;
@@ -429,7 +438,6 @@
 
         var GAP = 16;
         var INTERVAL = 5500;
-        var DOTS = [];
         var current = 0;
         var pos = 1;
         var timer = null;
@@ -467,9 +475,15 @@
             }
         }
 
+        function formatNumber(value) {
+            return String(value).padStart(2, '0');
+        }
+
         function syncActive() {
             origItems.forEach(function (el, i) { el.classList.toggle('active', i === current); });
-            DOTS.forEach(function (d, i) { d.classList.toggle('active', i === current); });
+            currentEl.textContent = formatNumber(current + 1);
+            totalEl.textContent = formatNumber(COUNT);
+            progressFillEl.style.width = (((current + 1) / COUNT) * 100) + '%';
         }
 
         track.addEventListener('transitionend', function () {
@@ -494,25 +508,10 @@
             moveTo(pos, true);
         }
 
-        function goTo(realIdx) {
-            realIdx = ((realIdx % COUNT) + COUNT) % COUNT;
-            advance(realIdx - current);
-            resetTimer();
-        }
-
         function resetTimer() {
             clearInterval(timer);
             timer = setInterval(function () { advance(1); }, INTERVAL);
         }
-
-        origItems.forEach(function (_, i) {
-            var d = document.createElement('button');
-            d.className = 'slideshow-dot' + (i === 0 ? ' active' : '');
-            d.setAttribute('aria-label', 'Bild ' + (i + 1));
-            d.addEventListener('click', function () { goTo(i); });
-            dotsEl.appendChild(d);
-            DOTS.push(d);
-        });
 
         var prevBtn = document.getElementById('gravurPrev');
         var nextBtn = document.getElementById('gravurNext');
