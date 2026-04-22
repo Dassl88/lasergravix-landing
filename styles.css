@@ -607,41 +607,28 @@ button:focus-visible,
     }
 }
 
-.slideshow-progress {
-    width: min(100%, 520px);
+.slideshow-dots {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 18px auto 0;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 18px;
 }
 
-.slideshow-progress-count,
-.slideshow-progress-total {
-    min-width: 28px;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.68);
-    text-align: center;
+.slideshow-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
 }
 
-.slideshow-progress-bar {
-    flex: 1;
-    height: 6px;
-    border-radius: var(--radius-pill);
-    background: rgba(255, 255, 255, 0.08);
-    overflow: hidden;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.38);
-}
-
-.slideshow-progress-fill {
-    display: block;
-    width: 0;
-    height: 100%;
-    border-radius: inherit;
-    background: linear-gradient(90deg, #ff7a2a, #ffb36f);
-    box-shadow: 0 0 16px rgba(255, 120, 40, 0.26);
-    transition: width 0.35s ease;
+.slideshow-dot.active {
+    background: var(--brand);
+    transform: scale(1.25);
+    box-shadow: 0 0 10px rgba(255, 120, 40, 0.55);
 }
 
 /* CTA-Band direkt unter der Slideshow */
@@ -1348,14 +1335,10 @@ button:focus-visible,
         padding-top: 0;
     }
 
-    .slideshow-progress {
-        gap: 10px;
-        margin-top: 16px;
-    }
-
-    .slideshow-progress-count,
-    .slideshow-progress-total {
-        min-width: 24px;
+    .gallery-counter {
+        top: 12px;
+        right: 12px;
+        padding: 6px 10px;
         font-size: 11px;
     }
 
@@ -1431,6 +1414,20 @@ button:focus-visible,
     position: relative;
     overflow: hidden;
     width: 100%;
+}
+
+.gallery-counter {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    z-index: 12;
+    padding: 7px 12px;
+    border-radius: var(--radius-pill);
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255, 236, 216, 0.88);
+    background: rgba(10, 5, 1, 0.76);
+    border: 1px solid rgba(255, 120, 40, 0.2);
 }
 
 .gallery-track {

@@ -99,6 +99,7 @@
             </div>
 
             <div class="gallery-slideshow" id="gravurSlideshow">
+                <div class="gallery-counter" id="galleryCounter">1 / 11</div>
                 <button class="gallery-arrow gallery-arrow-prev" id="gravurPrev" aria-label="Vorheriges Bild">&#8249;</button>
                 <button class="gallery-arrow gallery-arrow-next" id="gravurNext" aria-label="Nächstes Bild">&#8250;</button>
                 <div class="gallery-track" id="gravurTrack">
@@ -139,13 +140,7 @@
                     </div>
                 </div>
             </div>
-            <div class="slideshow-progress" id="slideshowProgress" aria-label="Fortschritt der Bildergalerie">
-                <span class="slideshow-progress-count" id="slideshowCurrent">01</span>
-                <div class="slideshow-progress-bar" aria-hidden="true">
-                    <span class="slideshow-progress-fill" id="slideshowProgressFill"></span>
-                </div>
-                <span class="slideshow-progress-total" id="slideshowTotal">11</span>
-            </div>
+            <div class="slideshow-dots" id="slideshowDots"></div>
         </section>
 
         <!-- Band direkt wie auf der echten Startseite, nur mit Coming-Soon-Botschaft -->
@@ -426,11 +421,9 @@
     (function () {
         var slideshow = document.getElementById('gravurSlideshow');
         var track = document.getElementById('gravurTrack');
-        var progressEl = document.getElementById('slideshowProgress');
-        var currentEl = document.getElementById('slideshowCurrent');
-        var totalEl = document.getElementById('slideshowTotal');
-        var progressFillEl = document.getElementById('slideshowProgressFill');
-        if (!slideshow || !track || !progressEl || !currentEl || !totalEl || !progressFillEl) return;
+        var dotsEl = document.getElementById('slideshowDots');
+        var counterEl = document.getElementById('galleryCounter');
+        if (!slideshow || !track || !dotsEl || !counterEl) return;
 
         var origItems = Array.prototype.slice.call(track.querySelectorAll('.gallery-item'));
         var COUNT = origItems.length;
@@ -438,6 +431,7 @@
 
         var GAP = 16;
         var INTERVAL = 5500;
+        var DOTS = [];
         var current = 0;
         var pos = 1;
         var timer = null;
@@ -481,9 +475,8 @@
 
         function syncActive() {
             origItems.forEach(function (el, i) { el.classList.toggle('active', i === current); });
-            currentEl.textContent = formatNumber(current + 1);
-            totalEl.textContent = formatNumber(COUNT);
-            progressFillEl.style.width = (((current + 1) / COUNT) * 100) + '%';
+            DOTS.forEach(function (d, i) { d.classList.toggle('active', i === current); });
+            counterEl.textContent = (current + 1) + ' / ' + COUNT;
         }
 
         track.addEventListener('transitionend', function () {
@@ -508,10 +501,25 @@
             moveTo(pos, true);
         }
 
+        function goTo(realIdx) {
+            realIdx = ((realIdx % COUNT) + COUNT) % COUNT;
+            advance(realIdx - current);
+            resetTimer();
+        }
+
         function resetTimer() {
             clearInterval(timer);
             timer = setInterval(function () { advance(1); }, INTERVAL);
         }
+
+        origItems.forEach(function (_, i) {
+            var d = document.createElement('button');
+            d.className = 'slideshow-dot' + (i === 0 ? ' active' : '');
+            d.setAttribute('aria-label', 'Bild ' + (i + 1));
+            d.addEventListener('click', function () { goTo(i); });
+            dotsEl.appendChild(d);
+            DOTS.push(d);
+        });
 
         var prevBtn = document.getElementById('gravurPrev');
         var nextBtn = document.getElementById('gravurNext');
