@@ -1127,6 +1127,11 @@ a {
         display: none;
     }
 
+    .hero-chip {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .hero-headline,
     .hero-sub {
         text-align: center;
@@ -1632,10 +1637,19 @@ a {
 
 @media (max-width: 640px) {
     .contact-card {
+        position: relative;
+        min-height: 168px;
         flex-direction: column;
     }
 
+    .contact-card-body {
+        padding-right: 116px;
+    }
+
     .contact-person-img {
+        position: absolute;
+        top: 22px;
+        right: 22px;
         width: 96px;
         height: 96px;
         transform: none;
