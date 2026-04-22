@@ -242,6 +242,13 @@ button:focus-visible,
     overflow: hidden;
 }
 
+.hero-chip-row {
+    width: min(calc(100% - 32px), var(--max));
+    margin: 0 auto 12px;
+    position: relative;
+    z-index: 1;
+}
+
 .hero-inner {
     display: grid;
     gap: 28px;
@@ -1102,9 +1109,14 @@ button:focus-visible,
 
 /* Responsive Anpassungen */
 @media (min-width: 720px) {
+    .hero-chip-row {
+        margin-bottom: 0;
+        padding-top: 18px;
+    }
+
     .hero-inner {
         grid-template-columns: minmax(0, 1fr) minmax(360px, 460px);
-        padding-top: 44px;
+        padding-top: 18px;
     }
 
     .about-grid,
@@ -1217,7 +1229,15 @@ button:focus-visible,
     }
 
     .hero-inner {
-        padding-top: 12px;
+        padding-top: 0;
+    }
+
+    .hero-chip-row {
+        width: min(calc(100% - 20px), var(--max));
+        margin: 0 auto 14px;
+        padding-top: 8px;
+        display: flex;
+        justify-content: center;
     }
 
     .hero-left {
@@ -1226,10 +1246,10 @@ button:focus-visible,
         align-items: center;
     }
 
-    .hero-chip {
+    .hero-chip-row .hero-chip {
         display: flex;
         width: fit-content;
-        margin: 6px auto 16px;
+        margin: 0;
         white-space: nowrap;
     }
 
@@ -1317,7 +1337,7 @@ button:focus-visible,
     }
 
     .hero-inner {
-        padding-top: 10px;
+        padding-top: 0;
     }
 
     .hero-actions .btn,
