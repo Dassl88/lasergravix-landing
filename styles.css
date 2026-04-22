@@ -920,6 +920,17 @@ a {
     gap: 14px;
 }
 
+.seo-block .section-kicker {
+    justify-self: start;
+    padding: 7px 16px;
+    font-size: 12px;
+    letter-spacing: 0.13em;
+    color: #ffd2a8;
+    background: rgba(255, 120, 40, 0.14);
+    border-color: rgba(255, 140, 60, 0.24);
+    box-shadow: 0 0 18px rgba(255, 120, 40, 0.08);
+}
+
 .seo-block h2,
 .coming-soon-panel h2 {
     font-size: clamp(24px, 4vw, 34px);
@@ -1128,6 +1139,8 @@ a {
     }
 
     .hero-chip {
+        display: flex;
+        width: fit-content;
         margin-left: auto;
         margin-right: auto;
     }
@@ -1929,7 +1942,7 @@ a {
 
     .example-img-left {
         left: 16px;
-        width: 112px;
+        width: 122px;
     }
 
     .example-img-right {
@@ -1942,6 +1955,7 @@ a {
     }
 
     .example-prompt {
+        left: 22px;
         max-width: 150px;
     }
 }
@@ -1953,7 +1967,7 @@ a {
 
     .example-img-left {
         left: 14px;
-        width: 96px;
+        width: 108px;
     }
 
     .example-img-right {
@@ -1966,7 +1980,7 @@ a {
     }
 
     .example-prompt {
-        left: 14px;
+        left: 22px;
         max-width: 132px;
         font-size: 11px;
     }
