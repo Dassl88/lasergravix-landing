@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lasergravix – Personalisierte Lasergravur (bald verfügbar)</title>
+    <meta name="description" content="Lasergravix bringt personalisierte Lasergravuren auf Holz und Schiefer in eine hochwertige Plattform. Die erste Version ist bald verfügbar.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-glow page-glow-left" aria-hidden="true"></div>
+    <div class="page-glow page-glow-right" aria-hidden="true"></div>
+
+    <!-- Topbar bewusst nah an der echten Startseite -->
+    <header class="topbar">
+        <div class="container topbar-inner">
+            <a class="brand" href="#hero" aria-label="Lasergravix Startseite">
+                <img src="images/logo/lasergravix-logo.png" alt="Lasergravix Logo" class="brand-logo">
+            </a>
+
+            <nav class="nav" aria-label="Hauptnavigation">
+                <a href="#beispiele">Inspiration</a>
+                <a href="#was-ist">Was ist Lasergravix?</a>
+                <a href="#ablauf">Ablauf</a>
+                <a href="#so-entsteht">So entsteht's</a>
+                <a href="#kontakt">Kontakt</a>
+                <a class="nav-cta" href="#coming-soon">Coming Soon</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="section-inner">
+                <div class="coming-soon-panel" id="coming-soon">
+                    <p class="section-kicker">Coming Soon</p>
+                    <h2>Lasergravix befindet sich aktuell im Aufbau.</h2>
+                    <p>Die erste Version der Plattform wird bald verfügbar sein.</p>
+                    <p class="coming-soon-note">Schau bald wieder vorbei.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero wie auf der echten Startseite, aber inhaltlich auf Pre-Launch angepasst -->
+        <section class="hero" id="hero">
+            <div class="container hero-inner">
+                <div class="hero-left">
+                    <p class="hero-chip">
+                        <span class="hero-chip-dot"></span>
+                        Premium Pre-Launch
+                    </p>
+
+                    <h1 class="hero-headline">
+                        Dein Foto als<br>
+                        <em>einzigartige</em><br>
+                        Lasergravur
+                    </h1>
+
+                    <p class="hero-sub">
+                        Individuelle Gravuren auf Holz und Schiefer – aktuell im Aufbau, bald verfügbar
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#coming-soon">Demnächst verfügbar</a>
+                    </div>
+
+                    <p class="hero-login-note">
+                        Wir arbeiten gerade an der Plattform – erste Version kommt in Kürze
+                    </p>
+
+                    <div class="hero-trust">
+                        <span>Fotos als Gravur</span>
+                        <span>Holz &amp; Schiefer</span>
+                        <span>KI-Vorschau kommt bald</span>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="hero-image">
+                        <img src="images/hero/hero-gravur.png" alt="Lasergravur Beispiel auf Holz und Schiefer">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Originale obere Slideshow mit denselben Bildern -->
+        <section class="gallery" id="beispiele">
+            <div class="section-header">
+                <div class="section-kicker">Inspiration</div>
+                <h2 class="gallery-label">Individuelle Gravuren mit Charakter</h2>
+            </div>
+
+            <div class="gallery-slideshow" id="gravurSlideshow">
+                <button class="gallery-arrow gallery-arrow-prev" id="gravurPrev" aria-label="Vorheriges Bild">&#8249;</button>
+                <button class="gallery-arrow gallery-arrow-next" id="gravurNext" aria-label="Nächstes Bild">&#8250;</button>
+                <div class="gallery-track" id="gravurTrack">
+                    <div class="gallery-item">
+                        <img src="images/gravuren/lasergravur-familienwappen-personalisiert.png" alt="Personalisiertes Familienwappen als Lasergravur auf Holz">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gravuren/lasergravur-firmenlogo-holzschild.png" alt="Firmenlogo als Lasergravur auf Holzschild">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gravuren/lasergravur-haustier-hund-geschenk.png" alt="Lasergravur Haustier Hund personalisiertes Geschenk">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gravuren/lasergravur-grillmeister-plaque-geschenk.png" alt="Grillmeister Plaque mit Grillmotiven als Lasergravur Geschenk">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gravuren/lasergravur-abenteuer-plakette-familie.png" alt="Abenteuer Plakette mit Familiengravur personalisiert">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gravuren/lasergravur-vintage-motorrad-holzschild.png" alt="Vintage Motorrad Lasergravur auf Holzschild">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gravuren/lasergravur-weingut-logo-holzschild.png" alt="Weingut Logo als Lasergravur auf Holzschild">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gravuren/lasergravur-willkommen-zuhause-familienschild.png" alt="Willkommen Zuhause Familienschild Lasergravur personalisiert">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gravuren/lasergravur-jahrestag-plakette-personalisiert.png" alt="Personalisierte Jahrestag Plakette Lasergravur Geschenk">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gravuren/lasergravur-hochzeit-erinnerung-holz.png" alt="Hochzeitserinnerung Lasergravur auf Holz">
+                    </div>
+                   
+
+                    <div class="gallery-item">
+                        <img src="images/gravuren/lasergravur-freundschaft-geschenk-personalisiert.png" alt="Freundschaft Lasergravur personalisiertes Geschenk">
+                    </div>
+                </div>
+            </div>
+            <div class="slideshow-dots" id="slideshowDots"></div>
+        </section>
+
+        <!-- Band direkt wie auf der echten Startseite, nur mit Coming-Soon-Botschaft -->
+        <div class="cta-band">
+            <div>
+                <div class="cta-band-headline">Die Plattform ist im Aufbau</div>
+                <div class="cta-band-sub">Design-Vorschau, Gestaltung und Bestellung werden bald in der ersten Version verfügbar sein.</div>
+            </div>
+            <a href="#coming-soon" class="btn btn-primary">Mehr erfahren</a>
+        </div>
+
+        <!-- Zusätzlicher Erklärbereich für die Testseite -->
+        <section class="section" id="was-ist">
+            <div class="section-inner about-inner">
+                <div class="about-copy">
+                    <p class="section-label">Was ist Lasergravix?</p>
+                    <h2 class="section-title">Eine Plattform für personalisierte Lasergravuren – einfach gedacht, hochwertig umgesetzt.</h2>
+                    <p class="section-sub">
+                        Lasergravix entsteht als moderne Plattform, mit der persönliche Gravuren auf Holz und Schiefer auf eine neue Art gestaltet werden können. Statt komplizierter Abläufe steht eine klare, ruhige Nutzererfahrung im Mittelpunkt: eigene Fotos hochladen, Ideen beschreiben und direkt sehen, wie daraus eine individuelle Gravur entsteht.
+                    </p>
+                    <p class="section-sub">
+                        Die Verbindung aus Gestaltung, Vorschau und Produktgefühl soll es ermöglichen, schon vor der Umsetzung ein gutes Gefühl für das Ergebnis zu bekommen. So entsteht nicht nur ein Produkt, sondern ein persönliches Objekt mit Bedeutung.
+                    </p>
+                </div>
+
+                <div class="about-grid">
+                    <article class="info-card">
+                        <h3>Was dich erwartet</h3>
+                        <p>
+                            Anstelle einer anonymen Standardbestellung entwickelt sich ein nachvollziehbarer Weg von der Idee bis zur fertigen Gravur. Persönliche Motive, emotionale Anlässe und eine hochwertige Darstellung stehen dabei im Fokus.
+                        </p>
+                    </article>
+
+                    <article class="info-card">
+                        <h3>Wofür Lasergravix gedacht ist</h3>
+                        <ul class="info-list">
+                            <li>Gravuren auf Holz und Schiefer</li>
+                            <li>Fotos als Gravur für besondere Erinnerungen</li>
+                            <li>Individuelle Geschenkideen mit persönlichem Charakter</li>
+                            <li>Vorschau des Designs vor der Umsetzung (Feature in Entwicklung)</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="seo-section">
+            <div class="seo-grid">
+                <div class="seo-item"><span class="seo-dot"></span>Handwerklich gefertigt</div>
+                <div class="seo-item"><span class="seo-dot"></span>Lasergravur auf Holz &amp; Schiefer</div>
+                <div class="seo-item"><span class="seo-dot"></span>Individuelle Gravuren nach Wunsch</div>
+                <div class="seo-item"><span class="seo-dot"></span>KI-Designvorschau vor Produktion</div>
+                <div class="seo-item"><span class="seo-dot"></span>Mehrere Designvarianten zur Auswahl</div>
+                <div class="seo-item"><span class="seo-dot"></span>Persönliche Betreuung</div>
+                <div class="seo-item"><span class="seo-dot"></span>Produktion erst nach deiner Freigabe</div>
+                <div class="seo-item"><span class="seo-dot"></span>Einzigartige Geschenkidee</div>
+            </div>
+        </section>
+
+        <!-- Originaler Workflow-Block -->
+        <section id="ablauf" class="section workflow">
+            <div class="section-inner">
+                <div class="workflow-header">
+                    <p class="section-label">Der Ablauf</p>
+                    <h2 class="section-title">Von deiner Idee zur fertigen Gravur</h2>
+                    <p class="section-sub">
+                        Beschreibe deine Idee oder lade ein Bild hoch. Unsere KI erstellt mehrere Gravurvorschläge, die du vergleichen, anpassen und weiterentwickeln kannst — bevor dein Design handwerklich umgesetzt wird.
+                    </p>
+                </div>
+
+                <div class="workflow-steps">
+                    <!-- Schritt 01 -->
+                    <div class="step-wrap">
+                        <div class="step-circle">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 16V4m0 0L8 8m4-4 4 4"></path>
+                                <path d="M4 20h16"></path>
+                            </svg>
+                        </div>
+                        <div class="step-card">
+                            <span class="step-badge">Schritt 01</span>
+                            <div class="step-title">Motiv &amp; Idee senden</div>
+                            <p class="step-desc">Lade ein Foto hoch oder beschreibe dein Wunschmotiv — beides funktioniert.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-arrow">➜</div>
+
+                    <!-- Schritt 02 -->
+                    <div class="step-wrap">
+                        <div class="step-circle">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"></path>
+                            </svg>
+                        </div>
+                        <div class="step-card">
+                            <span class="step-badge">Schritt 02</span>
+                            <div class="step-title">KI-Vorschau erstellen</div>
+                            <p class="step-desc">Die KI generiert eine Gravurvorschau aus deinem Bild und deiner Beschreibung.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-arrow">➜</div>
+
+                    <!-- Schritt 03 -->
+                    <div class="step-wrap">
+                        <div class="step-circle">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </div>
+                        <div class="step-card">
+                            <span class="step-badge">Schritt 03</span>
+                            <div class="step-title">Design anpassen</div>
+                            <p class="step-desc">Weitere Varianten, Stil und Text anpassen — bis das Design genau stimmt.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-arrow">➜</div>
+
+                    <!-- Schritt 04 -->
+                    <div class="step-wrap">
+                        <div class="step-circle">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="step-card">
+                            <span class="step-badge">Schritt 04</span>
+                            <div class="step-title">Freigabe &amp; Produktion</div>
+                            <p class="step-desc">Du wählst das finale Design — erst dann wird deine Gravur handwerklich gefertigt.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Originale Slideshow "So entsteht deine Gravur" -->
+        <section class="gen-show" id="so-entsteht">
+            <div class="gen-show-header">
+                <p class="section-label">In Action</p>
+                <h2 class="section-title">So entsteht deine Gravur</h2>
+            </div>
+
+            <div class="gen-show-wrap">
+                <button class="gen-arrow gen-arrow-prev" id="genPrev" aria-label="Vorheriges Bild">&#8249;</button>
+
+                <div class="gen-slideshow" id="genSlideshow">
+                    <div class="gen-counter" id="genCounter">1 / 4</div>
+                    <div class="gen-track" id="genTrack">
+                        <div class="gen-slide">
+                            <img src="images/slideshow/slide1.jpg" alt="Generator Schritt 1 – Bild hochladen">
+                        </div>
+                        <div class="gen-slide">
+                            <img src="images/slideshow/slide2.jpg" alt="Generator Schritt 2 – KI erstellt Vorschau">
+                        </div>
+                        <div class="gen-slide">
+                            <img src="images/slideshow/slide3.jpg" alt="Generator Schritt 3 – Design anpassen">
+                        </div>
+                        <div class="gen-slide">
+                            <img src="images/slideshow/slide4.jpg" alt="Generator Schritt 4 – Freigabe und Bestellung">
+                        </div>
+                    </div>
+                </div>
+
+                <button class="gen-arrow gen-arrow-next" id="genNext" aria-label="Nächstes Bild">&#8250;</button>
+            </div>
+
+            <div class="gen-dots" id="genDots"></div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="section">
+            <div class="section-inner idea-section">
+                <div class="examples-header">
+                    <p class="section-label">Vorher / Nachher</p>
+                    <h2 class="section-title">Aus Foto und Idee wird Gravur</h2>
+                </div>
+
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <div class="example-tag">Beispiel mit Foto</div>
+                        <img class="example-img-left" src="images/examples/example_photo_1.png" alt="Eingabe-Foto">
+                        <div class="example-arrow">➜</div>
+                        <img class="example-img-right" src="images/examples/example_gravur_1.png" alt="Fertige Gravur">
+                    </div>
+
+                    <div class="example-card">
+                        <div class="example-tag">Beispiel ohne Foto</div>
+                        <div class="example-prompt">
+                            <div class="prompt-label">Motiv</div>
+                            <div class="prompt-value">Berglandschaft mit Wanderer auf einem Höhenweg</div>
+                            <div class="prompt-label">Stil</div>
+                            <div class="prompt-value">feine Gravur, natürlicher Vintage-Look</div>
+                            <div class="prompt-label">Text</div>
+                            <div class="prompt-value">„Der Weg ist das Ziel"</div>
+                        </div>
+                        <div class="example-arrow">➜</div>
+                        <img class="example-img-right" src="images/examples/example_gravur_2.png" alt="Fertige Gravur">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="section trust-contact" id="kontakt">
+            <div class="section-inner">
+                <div class="trust-grid">
+                    <div class="trust-card">
+                        <div class="trust-card-title">Vertrauen &amp; Datenschutz</div>
+                        <ul class="trust-list">
+                            <li><span class="trust-check">✓</span>Deine Bilder &amp; Daten bleiben geschützt und vertraulich.</li>
+                            <li><span class="trust-check">✓</span>Keine Weitergabe an Dritte — volle Kontrolle über deine Inhalte.</li>
+                            <li><span class="trust-check">✓</span>SSL-Verschlüsselung &amp; DSGVO-konform verarbeitet.</li>
+                            <li><span class="trust-check">✓</span>Produktion ausschließlich in Deutschland mit hoher Qualitätskontrolle.</li>
+                            <li><span class="trust-check">✓</span>Jede Gravur wird persönlich geprüft und optimiert.</li>
+                        </ul>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-card-body">
+                            <div class="contact-card-title">Persönlicher Kontakt</div>
+                            <p class="contact-card-sub">
+                                Hast du Fragen oder ein besonderes Projekt? Ich unterstütze dich persönlich — von der Idee bis zur fertigen Gravur.
+                            </p>
+                            <ul class="contact-perks">
+                                <li>• Individuelle Wünsche sind jederzeit möglich</li>
+                                <li>• Schnelle &amp; direkte Kommunikation</li>
+                                <li>• Persönliche Begleitung durch den ganzen Prozess</li>
+                            </ul>
+                            <a href="#coming-soon" class="btn btn-primary">Mehr erfahren</a>
+                        </div>
+                        <img class="contact-person-img" src="images/contact/contact_person.png" alt="Persönlicher Ansprechpartner">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <div class="seo-block">
+                    <p class="section-kicker">Personalisierte Lasergravur erstellen</p>
+                    <h2>Lasergravix bringt persönliche Gravuren auf ein neues Level – einfach, verständlich und visuell erlebbar.</h2>
+                    <p>
+                        Wer eine personalisierte Lasergravur erstellen möchte, sucht mehr als nur ein Produkt. Es geht um Erinnerungen, Emotionen und die Möglichkeit, etwas Einzigartiges zu gestalten. Genau hier setzt Lasergravix an. Aktuell entsteht eine Plattform, die diesen Prozess neu denkt: klar, intuitiv und ohne unnötige Hürden.
+                    </p>
+                    <p>
+                        Statt komplizierter Konfiguration steht die Idee im Mittelpunkt. Nutzer sollen künftig ein Foto hochladen oder ihre Vorstellung beschreiben – und direkt sehen, wie daraus eine hochwertige Gravur auf Holz oder Schiefer entsteht. Eine realistische Vorschau macht das Ergebnis schon vor der Bestellung greifbar.
+                    </p>
+                    <p>
+                        Ob als persönliches Geschenk, Erinnerung oder individuelles Design: Lasergravuren verbinden handwerkliche Qualität mit emotionaler Bedeutung. Von Familienmotiven über Haustiere bis hin zu besonderen Momenten – jede Gravur erzählt ihre eigene Geschichte.
+                    </p>
+                    <p>
+                        Lasergravix kombiniert moderne Technologie mit dem Anspruch, hochwertige und persönliche Produkte zugänglich zu machen. Die Plattform befindet sich aktuell im Aufbau – mit dem Ziel, schon bald einen einfachen und stilvollen Weg zu bieten, individuelle Gravuren zu erstellen.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="final-cta-inner">
+                <h2 class="final-cta-title">Die Plattform ist im Aufbau</h2>
+                <p class="final-cta-sub">
+                    Design-Vorschau, Gestaltung und Bestellung werden bald in der ersten Version verfügbar sein.
+                </p>
+                <div class="email-box email-box-static">
+                    <a href="#coming-soon" class="btn btn-primary">Mehr erfahren</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+    (function () {
+        var slideshow = document.getElementById('gravurSlideshow');
+        var track = document.getElementById('gravurTrack');
+        var dotsEl = document.getElementById('slideshowDots');
+        if (!slideshow || !track || !dotsEl) return;
+
+        var origItems = Array.prototype.slice.call(track.querySelectorAll('.gallery-item'));
+        var COUNT = origItems.length;
+        if (!COUNT) return;
+
+        var GAP = 16;
+        var INTERVAL = 5500;
+        var DOTS = [];
+        var current = 0;
+        var pos = 1;
+        var timer = null;
+        var busy = false;
+        var tx = 0;
+
+        var cloneFirst = origItems[0].cloneNode(true);
+        var cloneLast = origItems[COUNT - 1].cloneNode(true);
+        track.insertBefore(cloneLast, origItems[0]);
+        track.appendChild(cloneFirst);
+        var allItems = Array.prototype.slice.call(track.querySelectorAll('.gallery-item'));
+
+        function iw() {
+            return Math.round(slideshow.offsetWidth * (window.innerWidth >= 720 ? 0.62 : 0.89));
+        }
+
+        function setWidths() {
+            var w = iw() + 'px';
+            allItems.forEach(function (el) { el.style.width = w; });
+        }
+
+        function calcOffset(p) {
+            var w = iw();
+            return (slideshow.offsetWidth - w) / 2 - p * (w + GAP);
+        }
+
+        function moveTo(p, anim) {
+            if (!anim) {
+                track.style.transition = 'none';
+                track.style.transform = 'translateX(' + calcOffset(p) + 'px)';
+                track.offsetHeight;
+                track.style.transition = '';
+            } else {
+                track.style.transform = 'translateX(' + calcOffset(p) + 'px)';
+            }
+        }
+
+        function syncActive() {
+            origItems.forEach(function (el, i) { el.classList.toggle('active', i === current); });
+            DOTS.forEach(function (d, i) { d.classList.toggle('active', i === current); });
+        }
+
+        track.addEventListener('transitionend', function () {
+            if (pos === 0) {
+                pos = COUNT;
+                moveTo(pos, false);
+            } else if (pos === COUNT + 1) {
+                pos = 1;
+                moveTo(pos, false);
+            }
+            busy = false;
+        });
+
+        function advance(delta) {
+            if (busy) return;
+            busy = true;
+            pos += delta;
+            if (pos === 0) current = COUNT - 1;
+            else if (pos === COUNT + 1) current = 0;
+            else current = pos - 1;
+            syncActive();
+            moveTo(pos, true);
+        }
+
+        function goTo(realIdx) {
+            realIdx = ((realIdx % COUNT) + COUNT) % COUNT;
+            advance(realIdx - current);
+            resetTimer();
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            timer = setInterval(function () { advance(1); }, INTERVAL);
+        }
+
+        origItems.forEach(function (_, i) {
+            var d = document.createElement('button');
+            d.className = 'slideshow-dot' + (i === 0 ? ' active' : '');
+            d.setAttribute('aria-label', 'Bild ' + (i + 1));
+            d.addEventListener('click', function () { goTo(i); });
+            dotsEl.appendChild(d);
+            DOTS.push(d);
+        });
+
+        var prevBtn = document.getElementById('gravurPrev');
+        var nextBtn = document.getElementById('gravurNext');
+        if (prevBtn) prevBtn.addEventListener('click', function () { advance(-1); resetTimer(); });
+        if (nextBtn) nextBtn.addEventListener('click', function () { advance(1); resetTimer(); });
+
+        slideshow.addEventListener('mouseenter', function () { clearInterval(timer); });
+        slideshow.addEventListener('mouseleave', resetTimer);
+        slideshow.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+        slideshow.addEventListener('touchend', function (e) {
+            var dx = e.changedTouches[0].clientX - tx;
+            if (Math.abs(dx) > 40) { advance(dx < 0 ? 1 : -1); resetTimer(); }
+        }, { passive: true });
+
+        window.addEventListener('resize', function () {
+            setWidths();
+            moveTo(pos, false);
+        });
+
+        setWidths();
+        syncActive();
+        moveTo(pos, false);
+        resetTimer();
+    })();
+    </script>
+
+    <script>
+    (function () {
+        var track = document.getElementById('genTrack');
+        var prevBtn = document.getElementById('genPrev');
+        var nextBtn = document.getElementById('genNext');
+        var dotsEl = document.getElementById('genDots');
+        var counterEl = document.getElementById('genCounter');
+        if (!track || !prevBtn || !nextBtn || !dotsEl) return;
+
+        var realSlides = Array.from(track.querySelectorAll('.gen-slide'));
+        var COUNT = realSlides.length;
+        var timer = null;
+        var INTERVAL = 5000;
+        var isTransitioning = false;
+
+        var cloneFirst = realSlides[0].cloneNode(true);
+        var cloneLast = realSlides[COUNT - 1].cloneNode(true);
+        track.appendChild(cloneFirst);
+        track.insertBefore(cloneLast, track.firstChild);
+
+        var current = 1;
+
+        for (var i = 0; i < COUNT; i++) {
+            var dot = document.createElement('button');
+            dot.className = 'gen-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+            (function (idx, currentDot) {
+                currentDot.addEventListener('click', function () { goTo(idx + 1, true); });
+            })(i, dot);
+            dotsEl.appendChild(dot);
+        }
+
+        function setPosition(idx, animated) {
+            track.style.transition = animated
+                ? 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+                : 'none';
+            track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+        }
+
+        function syncUI() {
+            var realIdx;
+            if (current === 0) realIdx = COUNT - 1;
+            else if (current === COUNT + 1) realIdx = 0;
+            else realIdx = current - 1;
+
+            var dots = dotsEl.querySelectorAll('.gen-dot');
+            dots.forEach(function (d, i) { d.classList.toggle('active', i === realIdx); });
+            if (counterEl) counterEl.textContent = (realIdx + 1) + ' / ' + COUNT;
+        }
+
+        function goTo(idx, resetTimerFlag) {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            current = idx;
+            setPosition(current, true);
+            syncUI();
+            if (resetTimerFlag) startTimer();
+        }
+
+        track.addEventListener('transitionend', function () {
+            isTransitioning = false;
+            if (current === 0) {
+                setPosition(COUNT, false);
+                current = COUNT;
+            } else if (current === COUNT + 1) {
+                setPosition(1, false);
+                current = 1;
+            }
+        });
+
+        function startTimer() {
+            clearInterval(timer);
+            timer = setInterval(function () { goTo(current + 1, false); }, INTERVAL);
+        }
+
+        prevBtn.addEventListener('click', function () { goTo(current - 1, true); });
+        nextBtn.addEventListener('click', function () { goTo(current + 1, true); });
+
+        var wrap = document.getElementById('genSlideshow');
+        if (wrap) {
+            wrap.addEventListener('mouseenter', function () { clearInterval(timer); });
+            wrap.addEventListener('mouseleave', startTimer);
+        }
+
+        var touchStartX = 0;
+        track.addEventListener('touchstart', function (e) {
+            touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+        track.addEventListener('touchend', function (e) {
+            var dx = e.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1, true);
+        }, { passive: true });
+
+        setPosition(1, false);
+        syncUI();
+        startTimer();
+    })();
+    </script>
+
+    <!-- Footer im Stil der bestehenden Startseite, aber reduziert auf statische Inhalte -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col footer-col-brand">
+                <img src="images/logo/lasergravix-logo.png" alt="Lasergravix Logo" class="footer-logo">
+                <p>
+                    Premium Pre-Launch für personalisierte Lasergravuren auf Holz und Schiefer.
+                </p>
+            </div>
+
+            <div class="footer-nav-cols">
+                <div class="footer-col">
+                    <h4>Seite</h4>
+                    <ul>
+                        <li><a href="#hero">Start</a></li>
+                        <li><a href="#beispiele">Inspiration</a></li>
+                        <li><a href="#ablauf">Ablauf</a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Inhalte</h4>
+                    <ul>
+                        <li><a href="#was-ist">Was ist Lasergravix?</a></li>
+                        <li><a href="#so-entsteht">So entsteht deine Gravur</a></li>
+                        <li><a href="#coming-soon">Coming Soon</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Materialien</h4>
+                    <ul>
+                        <li><a href="#beispiele">Holz</a></li>
+                        <li><a href="#beispiele">Schiefer</a></li>
+                        <li><a href="#beispiele">Foto-Gravur</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Status</h4>
+                    <ul>
+                        <li><a href="#coming-soon">Im Aufbau</a></li>
+                        <li><a href="#coming-soon">Bald verfügbar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <span>&copy; 2026 Lasergravix – Alle Rechte vorbehalten</span>
+            <div class="footer-payment">
+                <span>Fokus:</span>
+                <div class="pay-badge">Holz</div>
+                <div class="pay-badge">Schiefer</div>
+                <div class="pay-badge">Foto-Gravur</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
