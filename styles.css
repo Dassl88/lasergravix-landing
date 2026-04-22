@@ -1650,7 +1650,7 @@ button:focus-visible,
 .gen-counter {
     position: absolute;
     top: 12px;
-    right: 18px;
+    right: 26px;
     z-index: 20;
     background: rgba(8, 5, 2, 0.72);
     backdrop-filter: blur(6px);
