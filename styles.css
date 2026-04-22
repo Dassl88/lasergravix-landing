@@ -1924,40 +1924,50 @@ a {
     }
 
     .example-card {
-        height: 230px;
+        height: 220px;
     }
 
     .example-img-left {
-        width: 100px;
+        left: 16px;
+        width: 112px;
     }
 
     .example-img-right {
-        width: 120px;
+        right: 14px;
+        width: 138px;
+    }
+
+    .example-arrow {
+        font-size: 26px;
     }
 
     .example-prompt {
-        max-width: 140px;
+        max-width: 150px;
     }
 }
 
 @media (max-width: 640px) {
     .example-card {
-        height: 250px;
+        height: 220px;
     }
 
     .example-img-left {
         left: 14px;
-        width: 84px;
+        width: 96px;
     }
 
     .example-img-right {
-        right: 10px;
-        width: 105px;
+        right: 12px;
+        width: 124px;
+    }
+
+    .example-arrow {
+        font-size: 24px;
     }
 
     .example-prompt {
         left: 14px;
-        max-width: 118px;
+        max-width: 132px;
         font-size: 11px;
     }
 
