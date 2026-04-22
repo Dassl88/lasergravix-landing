@@ -607,30 +607,6 @@ button:focus-visible,
     }
 }
 
-.slideshow-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 18px;
-}
-
-.slideshow-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--border);
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
-}
-
-.slideshow-dot.active {
-    background: var(--brand);
-    transform: scale(1.25);
-    box-shadow: 0 0 10px rgba(255, 120, 40, 0.55);
-}
-
 /* CTA-Band direkt unter der Slideshow */
 .cta-band {
     width: min(calc(100% - 32px), var(--max));
@@ -1335,13 +1311,6 @@ button:focus-visible,
         padding-top: 0;
     }
 
-    .gallery-counter {
-        top: 12px;
-        right: 12px;
-        padding: 6px 10px;
-        font-size: 11px;
-    }
-
     .hero-actions .btn,
     .cta-band .btn {
         width: 100%;
@@ -1414,20 +1383,6 @@ button:focus-visible,
     position: relative;
     overflow: hidden;
     width: 100%;
-}
-
-.gallery-counter {
-    position: absolute;
-    right: 16px;
-    top: 16px;
-    z-index: 12;
-    padding: 7px 12px;
-    border-radius: var(--radius-pill);
-    font-size: 12px;
-    font-weight: 700;
-    color: rgba(255, 236, 216, 0.88);
-    background: rgba(10, 5, 1, 0.76);
-    border: 1px solid rgba(255, 120, 40, 0.2);
 }
 
 .gallery-track {

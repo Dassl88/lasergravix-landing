@@ -99,7 +99,7 @@
             </div>
 
             <div class="gallery-slideshow" id="gravurSlideshow">
-                <div class="gallery-counter" id="galleryCounter">1 / 11</div>
+                <div class="gen-counter" id="galleryCounter">1 / 11</div>
                 <button class="gallery-arrow gallery-arrow-prev" id="gravurPrev" aria-label="Vorheriges Bild">&#8249;</button>
                 <button class="gallery-arrow gallery-arrow-next" id="gravurNext" aria-label="Nächstes Bild">&#8250;</button>
                 <div class="gallery-track" id="gravurTrack">
@@ -140,7 +140,7 @@
                     </div>
                 </div>
             </div>
-            <div class="slideshow-dots" id="slideshowDots"></div>
+            <div class="gen-dots" id="slideshowDots"></div>
         </section>
 
         <!-- Band direkt wie auf der echten Startseite, nur mit Coming-Soon-Botschaft -->
@@ -514,7 +514,7 @@
 
         origItems.forEach(function (_, i) {
             var d = document.createElement('button');
-            d.className = 'slideshow-dot' + (i === 0 ? ' active' : '');
+            d.className = 'gen-dot' + (i === 0 ? ' active' : '');
             d.setAttribute('aria-label', 'Bild ' + (i + 1));
             d.addEventListener('click', function () { goTo(i); });
             dotsEl.appendChild(d);
