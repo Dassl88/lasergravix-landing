@@ -55,9 +55,44 @@ img {
     height: auto;
 }
 
+button {
+    font: inherit;
+}
+
 a {
     color: inherit;
     text-decoration: none;
+}
+
+a,
+button,
+.btn {
+    -webkit-tap-highlight-color: transparent;
+}
+
+#hero,
+#beispiele,
+#was-ist,
+#ablauf,
+#so-entsteht,
+#kontakt,
+#coming-soon {
+    scroll-margin-top: 108px;
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.nav a:focus-visible,
+.gallery-arrow:focus-visible,
+.gen-arrow:focus-visible,
+.slideshow-dot:focus-visible,
+.gen-dot:focus-visible {
+    outline: none;
+    box-shadow:
+        0 0 0 2px rgba(11, 15, 20, 0.96),
+        0 0 0 4px rgba(255, 120, 40, 0.72),
+        0 0 18px rgba(255, 120, 40, 0.28);
 }
 
 .page-glow {
@@ -571,11 +606,13 @@ a {
 }
 
 .slideshow-dot {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: var(--border);
+    border: none;
     cursor: pointer;
+    padding: 0;
     transition: background 0.2s, box-shadow 0.2s;
 }
 
@@ -1134,8 +1171,47 @@ a {
 }
 
 @media (max-width: 720px) {
+    .topbar-inner {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 10px 12px;
+    }
+
     .nav {
+        display: flex;
+        order: 3;
+        width: 100%;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x proximity;
+    }
+
+    .nav::-webkit-scrollbar {
         display: none;
+    }
+
+    .nav a {
+        flex: 0 0 auto;
+        padding: 9px 12px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.82);
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        scroll-snap-align: start;
+    }
+
+    .nav-cta {
+        background: rgba(255, 120, 40, 0.18);
+        border-color: rgba(255, 120, 40, 0.3);
+    }
+
+    .hero-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero-chip {
@@ -1153,6 +1229,26 @@ a {
     .hero-sub {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .hero-actions {
+        width: 100%;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-login-note {
+        text-align: center;
+        max-width: 420px;
+    }
+
+    .hero-trust {
+        justify-content: center;
+    }
+
+    .hero-trust span {
+        justify-content: center;
     }
 
     .showcase-stage {
@@ -1214,6 +1310,14 @@ a {
 
     .hero-actions .btn,
     .cta-band .btn {
+        width: 100%;
+    }
+
+    .hero-trust {
+        gap: 8px;
+    }
+
+    .hero-trust span {
         width: 100%;
     }
 
@@ -1988,5 +2092,19 @@ a {
     .example-tag {
         font-size: 12px;
         padding: 6px 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
