@@ -557,6 +557,11 @@ button:focus-visible,
 }
 
 @media (min-width: 720px) {
+    .gallery-slideshow,
+    .gallery .gen-dots {
+        width: min(calc(100% - 32px), calc(var(--max) - 160px));
+    }
+
     .gallery-arrow {
         display: flex;
         align-items: center;
@@ -1407,6 +1412,13 @@ button:focus-visible,
     width: min(calc(100% - 32px), var(--max));
     margin: 0 auto;
     border-radius: var(--radius);
+}
+
+@media (min-width: 720px) {
+    .gallery-slideshow,
+    .gallery .gen-dots {
+        width: min(calc(100% - 32px), calc(var(--max) - 160px));
+    }
 }
 
 .gallery-track {
