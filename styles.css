@@ -1404,7 +1404,8 @@ button:focus-visible,
 .gallery-slideshow {
     position: relative;
     overflow: hidden;
-    width: 100%;
+    width: min(calc(100% - 32px), var(--max));
+    margin: 0 auto;
     border-radius: var(--radius);
 }
 
