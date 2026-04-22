@@ -959,13 +959,15 @@ button:focus-visible,
 
 .seo-block .section-kicker {
     justify-self: start;
-    padding: 7px 16px;
-    font-size: 12px;
-    letter-spacing: 0.13em;
-    color: #ffd2a8;
-    background: rgba(255, 120, 40, 0.14);
-    border-color: rgba(255, 140, 60, 0.24);
-    box-shadow: 0 0 18px rgba(255, 120, 40, 0.08);
+    padding: 0;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    color: var(--brand);
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .seo-block h2,
@@ -984,6 +986,12 @@ button:focus-visible,
 
 .coming-soon-panel .section-kicker {
     margin-inline: auto;
+    color: #8dff9f;
+    background: rgba(78, 255, 124, 0.12);
+    border: 1px solid rgba(78, 255, 124, 0.28);
+    box-shadow:
+        0 0 18px rgba(78, 255, 124, 0.2),
+        0 0 36px rgba(78, 255, 124, 0.1);
 }
 
 .coming-soon-note {
@@ -1209,16 +1217,22 @@ button:focus-visible,
     }
 
     .hero-left {
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-top: 28px;
     }
 
     .hero-chip {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
         display: flex;
         width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0;
+        white-space: nowrap;
     }
 
     .hero-headline,
