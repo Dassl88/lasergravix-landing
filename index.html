@@ -421,128 +421,102 @@
     (function () {
         var slideshow = document.getElementById('gravurSlideshow');
         var track = document.getElementById('gravurTrack');
+        var prevBtn = document.getElementById('gravurPrev');
+        var nextBtn = document.getElementById('gravurNext');
         var dotsEl = document.getElementById('slideshowDots');
         var counterEl = document.getElementById('galleryCounter');
-        if (!slideshow || !track || !dotsEl || !counterEl) return;
+        if (!slideshow || !track || !prevBtn || !nextBtn || !dotsEl || !counterEl) return;
 
-        var origItems = Array.prototype.slice.call(track.querySelectorAll('.gallery-item'));
-        var COUNT = origItems.length;
+        var realSlides = Array.from(track.querySelectorAll('.gallery-item'));
+        var COUNT = realSlides.length;
         if (!COUNT) return;
 
-        var GAP = 16;
         var INTERVAL = 5500;
-        var DOTS = [];
-        var current = 0;
-        var pos = 1;
         var timer = null;
-        var busy = false;
-        var tx = 0;
+        var isTransitioning = false;
 
-        var cloneFirst = origItems[0].cloneNode(true);
-        var cloneLast = origItems[COUNT - 1].cloneNode(true);
-        track.insertBefore(cloneLast, origItems[0]);
+        var cloneFirst = realSlides[0].cloneNode(true);
+        var cloneLast = realSlides[COUNT - 1].cloneNode(true);
         track.appendChild(cloneFirst);
-        var allItems = Array.prototype.slice.call(track.querySelectorAll('.gallery-item'));
+        track.insertBefore(cloneLast, track.firstChild);
 
-        function iw() {
-            return Math.round(slideshow.offsetWidth * (window.innerWidth >= 720 ? 0.62 : 0.89));
+        var current = 1;
+
+        for (var i = 0; i < COUNT; i++) {
+            var dot = document.createElement('button');
+            dot.className = 'gen-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', 'Bild ' + (i + 1));
+            (function (idx, currentDot) {
+                currentDot.addEventListener('click', function () { goTo(idx + 1, true); });
+            })(i, dot);
+            dotsEl.appendChild(dot);
         }
 
-        function setWidths() {
-            var w = iw() + 'px';
-            allItems.forEach(function (el) { el.style.width = w; });
+        function setPosition(idx, animated) {
+            track.style.transition = animated
+                ? 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+                : 'none';
+            track.style.transform = 'translateX(-' + (idx * 100) + '%)';
         }
 
-        function calcOffset(p) {
-            var w = iw();
-            return (slideshow.offsetWidth - w) / 2 - p * (w + GAP);
+        function syncUI() {
+            var realIdx;
+            if (current === 0) realIdx = COUNT - 1;
+            else if (current === COUNT + 1) realIdx = 0;
+            else realIdx = current - 1;
+
+            var dots = dotsEl.querySelectorAll('.gen-dot');
+            dots.forEach(function (d, i) { d.classList.toggle('active', i === realIdx); });
+            counterEl.textContent = (realIdx + 1) + ' / ' + COUNT;
         }
 
-        function moveTo(p, anim) {
-            if (!anim) {
-                track.style.transition = 'none';
-                track.style.transform = 'translateX(' + calcOffset(p) + 'px)';
-                track.offsetHeight;
-                track.style.transition = '';
-            } else {
-                track.style.transform = 'translateX(' + calcOffset(p) + 'px)';
-            }
-        }
-
-        function formatNumber(value) {
-            return String(value).padStart(2, '0');
-        }
-
-        function syncActive() {
-            origItems.forEach(function (el, i) { el.classList.toggle('active', i === current); });
-            DOTS.forEach(function (d, i) { d.classList.toggle('active', i === current); });
-            counterEl.textContent = (current + 1) + ' / ' + COUNT;
+        function goTo(idx, resetTimerFlag) {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            current = idx;
+            setPosition(current, true);
+            syncUI();
+            if (resetTimerFlag) startTimer();
         }
 
         track.addEventListener('transitionend', function () {
-            if (pos === 0) {
-                pos = COUNT;
-                moveTo(pos, false);
-            } else if (pos === COUNT + 1) {
-                pos = 1;
-                moveTo(pos, false);
+            isTransitioning = false;
+            if (current === 0) {
+                setPosition(COUNT, false);
+                current = COUNT;
+            } else if (current === COUNT + 1) {
+                setPosition(1, false);
+                current = 1;
             }
-            busy = false;
         });
 
-        function advance(delta) {
-            if (busy) return;
-            busy = true;
-            pos += delta;
-            if (pos === 0) current = COUNT - 1;
-            else if (pos === COUNT + 1) current = 0;
-            else current = pos - 1;
-            syncActive();
-            moveTo(pos, true);
-        }
-
-        function goTo(realIdx) {
-            realIdx = ((realIdx % COUNT) + COUNT) % COUNT;
-            advance(realIdx - current);
-            resetTimer();
-        }
-
-        function resetTimer() {
+        function startTimer() {
             clearInterval(timer);
-            timer = setInterval(function () { advance(1); }, INTERVAL);
+            timer = setInterval(function () { goTo(current + 1, false); }, INTERVAL);
         }
 
-        origItems.forEach(function (_, i) {
-            var d = document.createElement('button');
-            d.className = 'gen-dot' + (i === 0 ? ' active' : '');
-            d.setAttribute('aria-label', 'Bild ' + (i + 1));
-            d.addEventListener('click', function () { goTo(i); });
-            dotsEl.appendChild(d);
-            DOTS.push(d);
-        });
-
-        var prevBtn = document.getElementById('gravurPrev');
-        var nextBtn = document.getElementById('gravurNext');
-        if (prevBtn) prevBtn.addEventListener('click', function () { advance(-1); resetTimer(); });
-        if (nextBtn) nextBtn.addEventListener('click', function () { advance(1); resetTimer(); });
+        prevBtn.addEventListener('click', function () { goTo(current - 1, true); });
+        nextBtn.addEventListener('click', function () { goTo(current + 1, true); });
 
         slideshow.addEventListener('mouseenter', function () { clearInterval(timer); });
-        slideshow.addEventListener('mouseleave', resetTimer);
-        slideshow.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
-        slideshow.addEventListener('touchend', function (e) {
-            var dx = e.changedTouches[0].clientX - tx;
-            if (Math.abs(dx) > 40) { advance(dx < 0 ? 1 : -1); resetTimer(); }
+        slideshow.addEventListener('mouseleave', startTimer);
+
+        var touchStartX = 0;
+        track.addEventListener('touchstart', function (e) {
+            touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+        track.addEventListener('touchend', function (e) {
+            var dx = e.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1, true);
         }, { passive: true });
 
         window.addEventListener('resize', function () {
-            setWidths();
-            moveTo(pos, false);
+            setPosition(current, false);
         });
 
-        setWidths();
-        syncActive();
-        moveTo(pos, false);
-        resetTimer();
+        setPosition(1, false);
+        syncUI();
+        startTimer();
     })();
     </script>
 

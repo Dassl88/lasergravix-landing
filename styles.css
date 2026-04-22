@@ -1391,14 +1391,14 @@ button:focus-visible,
     position: relative;
     overflow: hidden;
     width: 100%;
+    border-radius: var(--radius);
 }
 
 .gallery-track {
     display: flex;
-    gap: 16px;
+    gap: 0;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
-    cursor: grab;
 }
 
 .gallery-track:active {
@@ -1408,54 +1408,12 @@ button:focus-visible,
 .gallery-item {
     flex: none;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--radius);
-    overflow: hidden;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    border-left: 1px solid rgba(255, 255, 255, 0.05);
-    border-right: 1px solid rgba(255, 255, 255, 0.03);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
-    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6);
-    transform: scale(0.94) perspective(1100px) rotateX(1.8deg);
-    transform-origin: center top;
-    opacity: 0.55;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease, box-shadow 0.5s ease;
-}
-
-.gallery-item.active {
-    transform: scale(1) perspective(1100px) rotateX(1.8deg);
-    opacity: 1;
-    border-top: 1px solid rgba(255, 255, 255, 0.22);
-    border-left: 1px solid rgba(255, 255, 255, 0.12);
-    border-right: 1px solid rgba(255, 255, 255, 0.07);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.45),
-        0 2px 4px rgba(0, 0, 0, 0.5),
-        0 8px 20px rgba(0, 0, 0, 0.6),
-        0 28px 60px rgba(0, 0, 0, 0.75),
-        0 50px 90px rgba(0, 0, 0, 0.4);
-}
-
-.gallery-item.active:hover {
-    transform: scale(1) perspective(1100px) rotateX(0.6deg) translateY(-3px);
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.12),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.45),
-        0 4px 8px rgba(0, 0, 0, 0.5),
-        0 12px 30px rgba(0, 0, 0, 0.65),
-        0 36px 80px rgba(0, 0, 0, 0.75),
-        0 60px 100px rgba(0, 0, 0, 0.4);
+    display: block;
 }
 
 .gallery-item img {
-    max-width: 100%;
     width: 100%;
     height: auto;
-    object-fit: contain;
     display: block;
     pointer-events: none;
     user-select: none;
@@ -1497,11 +1455,11 @@ button:focus-visible,
     }
 
     .gallery-arrow-prev {
-        left: calc(19% - 26px);
+        left: 22px;
     }
 
     .gallery-arrow-next {
-        right: calc(19% - 26px);
+        right: 22px;
     }
 }
 
