@@ -2033,7 +2033,15 @@ button:focus-visible,
 
 @media (max-width: 720px) {
     .seo-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .seo-item {
+        align-items: flex-start;
+        padding: 10px 12px;
+        font-size: 12px;
+        line-height: 1.35;
     }
 
     .example-card {
@@ -2061,6 +2069,15 @@ button:focus-visible,
 }
 
 @media (max-width: 640px) {
+    .seo-grid {
+        gap: 8px;
+    }
+
+    .seo-item {
+        padding: 9px 10px;
+        font-size: 11.5px;
+    }
+
     .example-card {
         height: 220px;
     }
