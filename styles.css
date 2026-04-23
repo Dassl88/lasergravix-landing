@@ -1826,6 +1826,10 @@ button:focus-visible,
     padding: 20px;
 }
 
+.contact-modal[hidden] {
+    display: none;
+}
+
 .contact-modal-backdrop {
     position: absolute;
     inset: 0;
