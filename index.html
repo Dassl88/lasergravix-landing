@@ -376,16 +376,43 @@
 
                     <div class="contact-card">
                         <div class="contact-card-body">
-                            <div class="contact-card-title">Persönlicher Kontakt</div>
-                            <p class="contact-card-sub">
-                                Hast du Fragen oder ein besonderes Projekt? Ich unterstütze dich persönlich — von der Idee bis zur fertigen Gravur.
-                            </p>
-                            <ul class="contact-perks">
-                                <li>• Individuelle Wünsche sind jederzeit möglich</li>
-                                <li>• Schnelle &amp; direkte Kommunikation</li>
-                                <li>• Persönliche Begleitung durch den ganzen Prozess</li>
-                            </ul>
-                            <a href="#coming-soon" class="btn btn-primary">Mehr erfahren</a>
+                            <div class="contact-intro">
+                                <div class="contact-card-title">Persönlicher Kontakt</div>
+                                <p class="contact-card-sub">
+                                    Hast du Fragen oder ein besonderes Projekt? Ich unterstütze dich persönlich — von der Idee bis zur fertigen Gravur.
+                                </p>
+                                <ul class="contact-perks">
+                                    <li>• Individuelle Wünsche sind jederzeit möglich</li>
+                                    <li>• Schnelle &amp; direkte Kommunikation</li>
+                                    <li>• Persönliche Begleitung durch den ganzen Prozess</li>
+                                </ul>
+                            </div>
+                            <form class="contact-form" action="https://formsubmit.co/dustinbuerger88@gmail.com" method="POST">
+                                <input type="hidden" name="_subject" value="Neue Kontaktanfrage von Lasergravix">
+                                <input type="hidden" name="_next" value="https://www.lasergravix.de/#kontakt">
+                                <input type="hidden" name="_template" value="table">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input class="contact-honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off">
+
+                                <div class="contact-form-grid">
+                                    <label class="contact-field">
+                                        <span>Name</span>
+                                        <input type="text" name="name" placeholder="Dein Name" required>
+                                    </label>
+
+                                    <label class="contact-field">
+                                        <span>E-Mail</span>
+                                        <input type="email" name="email" placeholder="deine@email.de" required>
+                                    </label>
+                                </div>
+
+                                <label class="contact-field">
+                                    <span>Nachricht</span>
+                                    <textarea name="message" rows="4" placeholder="Erzähl mir kurz von deinem Wunschmotiv oder Projekt." required></textarea>
+                                </label>
+
+                                <button type="submit" class="btn btn-primary">Jetzt Kontakt aufnehmen</button>
+                            </form>
                         </div>
                         <img class="contact-person-img" src="images/contact/contact_person.png" alt="Persönlicher Ansprechpartner">
                     </div>
