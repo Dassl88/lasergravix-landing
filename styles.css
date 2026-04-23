@@ -1720,6 +1720,29 @@ button:focus-visible,
     color: var(--muted);
 }
 
+.contact-toggle {
+    width: auto;
+    align-self: flex-start;
+}
+
+.contact-form-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.28s ease, opacity 0.28s ease, margin-top 0.28s ease;
+    opacity: 0;
+    margin-top: 0;
+}
+
+.contact-form-panel.is-open {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    margin-top: 18px;
+}
+
+.contact-form-panel > * {
+    overflow: hidden;
+}
+
 .contact-form {
     display: grid;
     gap: 14px;
@@ -1779,8 +1802,72 @@ button:focus-visible,
     align-self: flex-start;
 }
 
+.contact-submit[disabled] {
+    opacity: 0.8;
+    cursor: wait;
+}
+
+.contact-form-status {
+    font-size: 13px;
+    color: #ffb7a1;
+    line-height: 1.5;
+}
+
 .contact-honeypot {
     display: none;
+}
+
+.contact-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 120;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+.contact-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 3, 1, 0.72);
+    backdrop-filter: blur(6px);
+}
+
+.contact-modal-card {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 420px);
+    padding: 28px 24px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255, 120, 40, 0.18);
+    background: linear-gradient(160deg, rgba(34, 21, 9, 0.96), rgba(10, 6, 2, 0.98));
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.68), 0 0 32px rgba(255, 120, 40, 0.12);
+    text-align: center;
+}
+
+.contact-modal-kicker {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--brand);
+    margin-bottom: 10px;
+}
+
+.contact-modal-card h3 {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.contact-modal-card p {
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 20px;
+}
+
+body.modal-open {
+    overflow: hidden;
 }
 
 .contact-person-img {
@@ -1831,6 +1918,11 @@ button:focus-visible,
         padding-right: 116px;
     }
 
+    .contact-toggle,
+    .contact-form .btn {
+        width: 100%;
+    }
+
     .contact-person-img {
         position: absolute;
         top: 22px;
@@ -1844,8 +1936,8 @@ button:focus-visible,
         grid-template-columns: 1fr;
     }
 
-    .contact-form .btn {
-        width: 100%;
+    .contact-modal-card {
+        padding: 24px 18px;
     }
 }
 
